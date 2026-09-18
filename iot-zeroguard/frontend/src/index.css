@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased overflow-x-hidden;
+    background-color: #0F172A; /* Deep Navy */
+    color: #F1F5F9; /* Near White */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Common component classes */
+  .card {
+    @apply rounded-xl border border-slate-700 bg-slate-800 p-6 shadow-sm;
+  }
+  
+  .metric-label {
+    @apply block text-xs uppercase tracking-widest text-slate-400 mb-1;
+  }
+  
+  .metric-value {
+    @apply block text-3xl font-extrabold tabular-nums text-slate-100;
+  }
+  
+  .btn-primary {
+    @apply inline-flex justify-center items-center bg-teal-500 hover:bg-teal-400 text-white rounded-lg px-5 py-2.5 transition-all duration-200 hover:scale-[1.02] active:scale-95 font-medium shadow-md shadow-teal-500/20 cursor-pointer;
+  }
+  
+  .btn-outline {
+    @apply inline-flex justify-center items-center border border-slate-600 hover:bg-slate-700 text-white rounded-lg px-5 py-2.5 transition-all duration-200 hover:scale-[1.02] active:scale-95 font-medium cursor-pointer;
+  }
+  
+  .btn-ai {
+    @apply inline-flex justify-center items-center bg-purple-600 hover:bg-purple-500 text-white rounded-lg px-5 py-2.5 transition-all duration-200 hover:scale-[1.02] active:scale-95 font-medium shadow-md shadow-purple-600/30 gap-2 cursor-pointer;
+  }
+  
+  .btn-ai-outline {
+    @apply inline-flex justify-center items-center border border-purple-500/50 hover:bg-purple-500/10 text-purple-400 rounded-lg px-5 py-2.5 transition-all duration-200 hover:scale-[1.02] active:scale-95 font-medium cursor-pointer;
+  }
+  
+  /* AI Section specifics */
+  .ai-section {
+    @apply border-l-4 border-l-purple-500 relative bg-slate-800/90 overflow-hidden;
+  }
+  
+  .ai-section::before {
+    content: '';
+    @apply absolute inset-0 bg-purple-500/5 pointer-events-none;
+  }
+  
+  /* Hide scrollbar for clean UI */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0F172A; 
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #334155; 
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #475569; 
+  }
+}
